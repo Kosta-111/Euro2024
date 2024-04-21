@@ -70,43 +70,174 @@ namespace Euro2024.Data.Migrations
                         new
                         {
                             Id = 1,
-                            HighestStage = "1/4",
-                            Name = "Ukraine",
+                            HighestStage = "Group",
+                            Name = "Albania",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/700px-Flag_of_Albania.svg.png",
                             WinningsCount = 0
                         },
                         new
                         {
                             Id = 2,
                             HighestStage = "1/8",
-                            Name = "England",
+                            Name = "Austria",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/800px-Flag_of_Austria.svg.png",
                             WinningsCount = 0
                         },
                         new
                         {
                             Id = 3,
-                            HighestStage = "Winner",
-                            Name = "Italy",
-                            WinningsCount = 3
+                            HighestStage = "Final",
+                            Name = "Belgium",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/692px-Flag_of_Belgium.svg.png",
+                            WinningsCount = 0
                         },
                         new
                         {
                             Id = 4,
-                            HighestStage = "Winner",
-                            Name = "France",
-                            WinningsCount = 1
+                            HighestStage = "1/4",
+                            Name = "Croatia",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/800px-Flag_of_Croatia.svg.png",
+                            WinningsCount = 0
                         },
                         new
                         {
                             Id = 5,
                             HighestStage = "Winner",
-                            Name = "Spain",
-                            WinningsCount = 4
+                            Name = "Czechia",
+                            WinningsCount = 1
                         },
                         new
                         {
                             Id = 6,
+                            HighestStage = "Winner",
+                            Name = "Denmark",
+                            WinningsCount = 1
+                        },
+                        new
+                        {
+                            Id = 7,
                             HighestStage = "Final",
-                            Name = "Belgium",
+                            Name = "England",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            HighestStage = "Winner",
+                            Name = "France",
+                            WinningsCount = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            HighestStage = "None",
+                            Name = "Georgia",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            HighestStage = "Winner",
+                            Name = "Germany",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/800px-Flag_of_Germany.svg.png",
+                            WinningsCount = 3
+                        },
+                        new
+                        {
+                            Id = 11,
+                            HighestStage = "1/2",
+                            Name = "Hungary",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            HighestStage = "Winner",
+                            Name = "Italy",
+                            WinningsCount = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            HighestStage = "Winner",
+                            Name = "Netherlands",
+                            WinningsCount = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            HighestStage = "1/4",
+                            Name = "Poland",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            HighestStage = "Winner",
+                            Name = "Portugal",
+                            WinningsCount = 1
+                        },
+                        new
+                        {
+                            Id = 16,
+                            HighestStage = "1/4",
+                            Name = "Romania",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            HighestStage = "Group",
+                            Name = "Scotland",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 18,
+                            HighestStage = "Final",
+                            Name = "Serbia",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 19,
+                            HighestStage = "Winner",
+                            Name = "Slovakia",
+                            WinningsCount = 1
+                        },
+                        new
+                        {
+                            Id = 20,
+                            HighestStage = "Group",
+                            Name = "Slovenia",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 21,
+                            HighestStage = "Winner",
+                            Name = "Spain",
+                            WinningsCount = 3
+                        },
+                        new
+                        {
+                            Id = 22,
+                            HighestStage = "1/4",
+                            Name = "Switzerland",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 23,
+                            HighestStage = "1/2",
+                            Name = "Türkiye",
+                            WinningsCount = 0
+                        },
+                        new
+                        {
+                            Id = 24,
+                            HighestStage = "1/4",
+                            Name = "Ukraine",
                             WinningsCount = 0
                         });
                 });
@@ -211,10 +342,11 @@ namespace Euro2024.Data.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateOnly(2000, 12, 10),
-                            CountryId = 1,
+                            CountryId = 24,
                             FirstName = "Oleg",
                             FootballClub = "Dynamo Kyiv",
-                            LastName = "Gusin",
+                            LastName = "Gusev",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/c/ca/Oleh_Husyev_20120611.jpg",
                             TransferValue = 1000000
                         },
                         new
@@ -267,8 +399,8 @@ namespace Euro2024.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateOnly>("BuildDate")
-                        .HasColumnType("date");
+                    b.Property<int>("BuildYear")
+                        .HasColumnType("int");
 
                     b.Property<int>("Capacity")
                         .ValueGeneratedOnAdd()
@@ -301,47 +433,92 @@ namespace Euro2024.Data.Migrations
                         new
                         {
                             Id = 1,
-                            BuildDate = new DateOnly(2000, 4, 5),
-                            Capacity = 80000,
-                            CountryId = 3,
-                            Name = "San Siro",
-                            Settlement = "Milan"
+                            BuildYear = 1936,
+                            Capacity = 70033,
+                            CountryId = 10,
+                            Name = "Olympiastadion",
+                            Settlement = "Berlin"
                         },
                         new
                         {
                             Id = 2,
-                            BuildDate = new DateOnly(1980, 3, 15),
-                            Capacity = 70000,
-                            CountryId = 4,
-                            Name = "Velodrom",
-                            Settlement = "Paris"
+                            BuildYear = 2005,
+                            Capacity = 66026,
+                            CountryId = 10,
+                            Name = "Football Arena Munich",
+                            Settlement = "Munich"
                         },
                         new
                         {
                             Id = 3,
-                            BuildDate = new DateOnly(2001, 4, 5),
-                            Capacity = 60000,
-                            CountryId = 5,
-                            Name = "Camp Nou",
-                            Settlement = "Barselona"
+                            BuildYear = 1974,
+                            Capacity = 61524,
+                            CountryId = 10,
+                            Name = "BVB Stadion",
+                            Settlement = "Dortmund"
                         },
                         new
                         {
                             Id = 4,
-                            BuildDate = new DateOnly(2003, 4, 5),
-                            Capacity = 70000,
-                            CountryId = 2,
-                            Name = "Wembley",
-                            Settlement = "London"
+                            BuildYear = 1933,
+                            Capacity = 50998,
+                            CountryId = 10,
+                            Name = "Arena Stuttgart",
+                            Settlement = "Stuttgart"
                         },
                         new
                         {
                             Id = 5,
-                            BuildDate = new DateOnly(2004, 4, 5),
-                            Capacity = 80000,
-                            CountryId = 5,
-                            Name = "Santiago Bernabeu",
-                            Settlement = "Madrid"
+                            BuildYear = 2001,
+                            Capacity = 49471,
+                            CountryId = 10,
+                            Name = "Arena AufSchalke",
+                            Settlement = "Gelsenkirchen"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BuildYear = 2000,
+                            Capacity = 50215,
+                            CountryId = 10,
+                            Name = "Hamburg Arena",
+                            Settlement = "Hamburg"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BuildYear = 2005,
+                            Capacity = 48057,
+                            CountryId = 10,
+                            Name = "Frankfurt Stadion",
+                            Settlement = "Frankfurt"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BuildYear = 2004,
+                            Capacity = 46264,
+                            CountryId = 10,
+                            Name = "Dusseldorf Arena",
+                            Settlement = "Dusseldorf"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BuildYear = 2004,
+                            Capacity = 46922,
+                            CountryId = 10,
+                            Name = "Stadion Koln",
+                            Settlement = "Cologne"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BuildYear = 2004,
+                            Capacity = 46635,
+                            CountryId = 10,
+                            Name = "RB Arena",
+                            Settlement = "Leipzig"
                         });
                 });
 

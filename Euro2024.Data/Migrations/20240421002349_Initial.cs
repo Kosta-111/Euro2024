@@ -61,7 +61,7 @@ namespace Euro2024.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    BuildDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    BuildYear = table.Column<int>(type: "int", nullable: false),
                     Settlement = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Capacity = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     CountryId = table.Column<int>(type: "int", nullable: false),
@@ -148,8 +148,10 @@ namespace Euro2024.Data.Migrations
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
                 values: new object[,]
                 {
-                    { 1, "1/4", "Ukraine", null },
-                    { 2, "1/8", "England", null }
+                    { 1, "Group", "Albania", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/700px-Flag_of_Albania.svg.png" },
+                    { 2, "1/8", "Austria", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/800px-Flag_of_Austria.svg.png" },
+                    { 3, "Final", "Belgium", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/692px-Flag_of_Belgium.svg.png" },
+                    { 4, "1/4", "Croatia", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/800px-Flag_of_Croatia.svg.png" }
                 });
 
             migrationBuilder.InsertData(
@@ -157,22 +159,95 @@ namespace Euro2024.Data.Migrations
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
                 values: new object[,]
                 {
-                    { 3, "Winner", "Italy", null, 3 },
-                    { 4, "Winner", "France", null, 1 },
-                    { 5, "Winner", "Spain", null, 4 }
+                    { 5, "Winner", "Czechia", null, 1 },
+                    { 6, "Winner", "Denmark", null, 1 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
-                values: new object[] { 6, "Final", "Belgium", null });
+                values: new object[] { 7, "Final", "England", null });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
+                values: new object[] { 8, "Winner", "France", null, 2 });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
+                values: new object[] { 9, "None", "Georgia", null });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
+                values: new object[] { 10, "Winner", "Germany", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/800px-Flag_of_Germany.svg.png", 3 });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
+                values: new object[] { 11, "1/2", "Hungary", null });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
+                values: new object[,]
+                {
+                    { 12, "Winner", "Italy", null, 2 },
+                    { 13, "Winner", "Netherlands", null, 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
+                values: new object[] { 14, "1/4", "Poland", null });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
+                values: new object[] { 15, "Winner", "Portugal", null, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
+                values: new object[,]
+                {
+                    { 16, "1/4", "Romania", null },
+                    { 17, "Group", "Scotland", null },
+                    { 18, "Final", "Serbia", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
+                values: new object[] { 19, "Winner", "Slovakia", null, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
+                values: new object[] { 20, "Group", "Slovenia", null });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
+                values: new object[] { 21, "Winner", "Spain", null, 3 });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
+                values: new object[,]
+                {
+                    { 22, "1/4", "Switzerland", null },
+                    { 23, "1/2", "Türkiye", null },
+                    { 24, "1/4", "Ukraine", null }
+                });
 
             migrationBuilder.InsertData(
                 table: "Players",
                 columns: new[] { "Id", "BirthDate", "CountryId", "FirstName", "FootballClub", "LastName", "PhotoLink", "TransferValue" },
                 values: new object[,]
                 {
-                    { 1, new DateOnly(2000, 12, 10), 1, "Oleg", "Dynamo Kyiv", "Gusin", null, 1000000 },
+                    { 1, new DateOnly(2000, 12, 10), 24, "Oleg", "Dynamo Kyiv", "Gusev", "https://upload.wikimedia.org/wikipedia/commons/c/ca/Oleh_Husyev_20120611.jpg", 1000000 },
                     { 2, new DateOnly(2001, 11, 10), 1, "Oleg", "Dynamo Kyiv", "Busin", null, 1000000 },
                     { 3, new DateOnly(2002, 10, 10), 1, "Oleg", "Dynamo Kyiv", "Kusin", null, 1000000 },
                     { 4, new DateOnly(2003, 9, 10), 1, "Oleg", "Dynamo Kyiv", "Tusin", null, 1000000 },
@@ -181,14 +256,19 @@ namespace Euro2024.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Stadiums",
-                columns: new[] { "Id", "BuildDate", "Capacity", "CountryId", "Name", "PhotoLink", "Settlement" },
+                columns: new[] { "Id", "BuildYear", "Capacity", "CountryId", "Name", "PhotoLink", "Settlement" },
                 values: new object[,]
                 {
-                    { 1, new DateOnly(2000, 4, 5), 80000, 3, "San Siro", null, "Milan" },
-                    { 2, new DateOnly(1980, 3, 15), 70000, 4, "Velodrom", null, "Paris" },
-                    { 3, new DateOnly(2001, 4, 5), 60000, 5, "Camp Nou", null, "Barselona" },
-                    { 4, new DateOnly(2003, 4, 5), 70000, 2, "Wembley", null, "London" },
-                    { 5, new DateOnly(2004, 4, 5), 80000, 5, "Santiago Bernabeu", null, "Madrid" }
+                    { 1, 1936, 70033, 10, "Olympiastadion", null, "Berlin" },
+                    { 2, 2005, 66026, 10, "Football Arena Munich", null, "Munich" },
+                    { 3, 1974, 61524, 10, "BVB Stadion", null, "Dortmund" },
+                    { 4, 1933, 50998, 10, "Arena Stuttgart", null, "Stuttgart" },
+                    { 5, 2001, 49471, 10, "Arena AufSchalke", null, "Gelsenkirchen" },
+                    { 6, 2000, 50215, 10, "Hamburg Arena", null, "Hamburg" },
+                    { 7, 2005, 48057, 10, "Frankfurt Stadion", null, "Frankfurt" },
+                    { 8, 2004, 46264, 10, "Dusseldorf Arena", null, "Dusseldorf" },
+                    { 9, 2004, 46922, 10, "Stadion Koln", null, "Cologne" },
+                    { 10, 2004, 46635, 10, "RB Arena", null, "Leipzig" }
                 });
 
             migrationBuilder.InsertData(

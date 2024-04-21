@@ -4,9 +4,112 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Euro2024.App"
+        d:DataContext="{d:DesignInstance Type=local:Euro2024Manager}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="EURO 2024" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="SelectedItem" Value="{Binding SelectedItem, Mode=TwoWay}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentType}" Value="Countries">
+                    <Setter Property="ItemsSource" Value="{Binding Countries}"/>
+                    <Setter Property="ItemTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <DockPanel LastChildFill="True" Margin="5">
+                                    <UniformGrid Rows="2" Columns="2" DockPanel.Dock="Left">
+                                        <TextBlock>Winnings:</TextBlock>
+                                        <TextBlock Text="{Binding WinningsCount}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                        <TextBlock>Highest stage:</TextBlock>
+                                        <TextBlock Text="{Binding HighestStage}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                    </UniformGrid>
+                                    <Image Source="{Binding PhotoLink}" DockPanel.Dock="Right" Margin="5" Height="40" MaxWidth="60"></Image>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="26" HorizontalAlignment="Center"></TextBlock>                                  
+                                </DockPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
 
-    </Grid>
+                <DataTrigger Binding="{Binding CurrentType}" Value="Players">
+                    <Setter Property="ItemsSource" Value="{Binding Players}"/>
+                    <Setter Property="ItemTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <DockPanel LastChildFill="True" Margin="5">
+                                    <UniformGrid Rows="2" Columns="2" DockPanel.Dock="Left">
+                                        <TextBlock>Transfer value:</TextBlock>
+                                        <TextBlock Text="{Binding TransferValue}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                        <TextBlock>Birth date:</TextBlock>
+                                        <TextBlock Text="{Binding BirthDate}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                    </UniformGrid>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="26" Padding="25 0" HorizontalAlignment="Center"></TextBlock>
+                                    <Image Source="{Binding PhotoLink}" DockPanel.Dock="Right" Margin="5" Height="40" MaxWidth="60"></Image>
+                                    <TextBlock Text="{Binding FootballClub}" FontWeight="DemiBold" Padding="5 0" FontSize="20" DockPanel.Dock="Top" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="{Binding CountryName}" FontWeight="DemiBold" Padding="5 0" DockPanel.Dock="Bottom" HorizontalAlignment="Right"></TextBlock>
+                                </DockPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding CurrentType}" Value="Stadiums">
+                    <Setter Property="ItemsSource" Value="{Binding Stadiums}"/>
+                    <Setter Property="ItemTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <DockPanel LastChildFill="True" Margin="5">
+                                    <UniformGrid Rows="2" Columns="2" DockPanel.Dock="Left">
+                                        <TextBlock>Builded in:</TextBlock>
+                                        <TextBlock Text="{Binding BuildYear}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                        <TextBlock>Capacity:</TextBlock>
+                                        <TextBlock Text="{Binding Capacity}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                    </UniformGrid>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="26" Padding="25 0" HorizontalAlignment="Center"></TextBlock>
+                                    <Image Source="{Binding CountryPhotoLink}" DockPanel.Dock="Right" Margin="5" Height="40" MaxWidth="60"></Image>
+                                    <TextBlock Text="{Binding Settlement}" FontWeight="DemiBold" Padding="5 0" FontSize="20" DockPanel.Dock="Top" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="{Binding CountryName}" FontWeight="DemiBold" Padding="5 0" DockPanel.Dock="Bottom" HorizontalAlignment="Right"></TextBlock>
+                                </DockPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding CurrentType}" Value="Games">
+                    <Setter Property="ItemsSource" Value="{Binding Games}"/>
+                    <Setter Property="ItemTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <DockPanel LastChildFill="True" Margin="5">
+                                    <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <Image Source="{Binding ImgLink1}" DockPanel.Dock="Right" Margin="5" Height="26"></Image>
+                                        <TextBlock Text="{Binding Team1}" FontWeight="Bold" FontSize="26" Padding="5 0"></TextBlock>
+                                        <TextBlock FontWeight="Bold" FontSize="26" Padding="5 0">:</TextBlock>
+                                        <TextBlock Text="{Binding Team2}" FontWeight="Bold" FontSize="26" Padding="5 0"></TextBlock>
+                                        <Image Source="{Binding ImgLink2}" DockPanel.Dock="Right" Margin="5" Height="26"></Image>
+                                    </StackPanel>                                    
+                                    <TextBlock Text="{Binding StartTime}" FontWeight="DemiBold" Padding="5 0" FontSize="16" DockPanel.Dock="Left" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="{Binding Stadium}" FontWeight="DemiBold" Padding="5 0" FontSize="16" DockPanel.Dock="Bottom" HorizontalAlignment="Right"></TextBlock>
+                                </DockPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <DockPanel Background="LightYellow">
+        <ToolBar DockPanel.Dock ="Top">
+            <Button Command="{Binding CountriesCommand}">Countries</Button>
+            <Button Command="{Binding PlayersCommand}">Players</Button>
+            <Button Command="{Binding StadiumsCommand}">Stadiums</Button>
+            <Button Command="{Binding GamesCommand}">Games</Button>
+            <Button Command="{Binding TicketsCommand}">Tickets</Button>
+        </ToolBar>
+        <ListBox></ListBox>
+    </DockPanel>
 </Window>

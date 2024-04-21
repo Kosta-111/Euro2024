@@ -10,7 +10,7 @@ internal class StadiumEntityConfigs : IEntityTypeConfiguration<Stadium>
     {
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
-        builder.Property(x => x.BuildDate).IsRequired();
+        builder.Property(x => x.BuildYear).IsRequired();
         builder.Property(x => x.Settlement).IsRequired().HasMaxLength(50);
         builder.Property(x => x.Capacity).IsRequired().HasDefaultValue(0);
         builder.Property(x => x.PhotoLink).IsRequired(false);

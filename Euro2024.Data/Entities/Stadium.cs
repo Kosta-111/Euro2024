@@ -4,7 +4,7 @@ public class Stadium : IEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public DateOnly BuildDate { get; set; }
+    public int BuildYear { get; set; }
     public string Settlement { get; set; }
     public int Capacity { get; set; }
     public int CountryId { get; set; }
