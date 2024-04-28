@@ -16,11 +16,12 @@ namespace Euro2024.App;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private Euro2024Manager viewModel = new();
+    private Euro2024Manager viewModel;
     public MainWindow()
     {
         InitializeComponent();
+        viewModel = new(listbox);
         DataContext = viewModel;
-        //listBox.Style = (Style)mainWindow.FindResource("stadiumsStyle");
     }
+    private void TextBox_TextChanged(object sender, TextChangedEventArgs e) => viewModel.Search();
 }

@@ -1,6 +1,9 @@
 ﻿using Euro2024.Data.Entities;
+using PropertyChanged;
 
 namespace Euro2024.App;
+
+[AddINotifyPropertyChangedInterface]
 public class PlayerVM
 {
     public int Id { get; set; }
@@ -16,7 +19,7 @@ public class PlayerVM
     {
         Id = entity.Id;
         Name = $"{entity.FirstName} {entity.LastName}";
-        BirthDate = entity.BirthDate;
+        BirthDate = DateOnly.FromDateTime(entity.BirthDate);
         FootballClub = entity.FootballClub;
         TransferValue = entity.TransferValue;
         PhotoLink = entity.PhotoLink;

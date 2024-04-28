@@ -98,18 +98,51 @@
                     </Setter>
                 </DataTrigger>
 
+                <DataTrigger Binding="{Binding CurrentType}" Value="Tickets">
+                    <Setter Property="ItemsSource" Value="{Binding Tickets}"/>
+                    <Setter Property="ItemTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <DockPanel LastChildFill="True" Margin="5">
+                                    <UniformGrid Rows="2" Columns="2" DockPanel.Dock="Left">
+                                        <TextBlock>Place:</TextBlock>
+                                        <TextBlock Text="{Binding Place}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                        <TextBlock>Price:</TextBlock>
+                                        <TextBlock Text="{Binding Price}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
+                                    </UniformGrid>
+                                    
+                                    <TextBlock Text="{Binding FirstTeam}" FontWeight="Bold" FontSize="26" Padding="20 0"></TextBlock>
+                                    <TextBlock FontWeight="Bold" FontSize="26" Padding="5 0">:</TextBlock>
+                                    <TextBlock Text="{Binding SecondTeam}" FontWeight="Bold" FontSize="26" Padding="20 0"></TextBlock>
+                                    <TextBlock Text="{Binding Stadium}" FontWeight="DemiBold" Padding="5 0" FontSize="20" DockPanel.Dock="Top" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Text="{Binding StartTime}" FontWeight="DemiBold" Padding="5 0" DockPanel.Dock="Bottom" HorizontalAlignment="Right"></TextBlock>
+                                </DockPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
             </Style.Triggers>
         </Style>
 
     </Window.Resources>
     <DockPanel Background="LightYellow">
         <ToolBar DockPanel.Dock ="Top">
-            <Button Command="{Binding CountriesCommand}">Countries</Button>
-            <Button Command="{Binding PlayersCommand}">Players</Button>
-            <Button Command="{Binding StadiumsCommand}">Stadiums</Button>
-            <Button Command="{Binding GamesCommand}">Games</Button>
-            <Button Command="{Binding TicketsCommand}">Tickets</Button>
+            <Button Command="{Binding AddCommand}">Add</Button>
+            <Button Command="{Binding EditCommand}">Edit</Button>
+            <Button Command="{Binding DeleteCommand}">Delete</Button>
+            <Label>Search:</Label>
+            <TextBox TextChanged="TextBox_TextChanged" Text="{Binding SearchedText, UpdateSourceTrigger=PropertyChanged}" Width="200" Background="LightGray"></TextBox>
         </ToolBar>
-        <ListBox></ListBox>
+
+        <StackPanel DockPanel.Dock ="Left">
+            <Button Command="{Binding CountriesCommand}" Height="45" Margin="5">Countries</Button>
+            <Button Command="{Binding PlayersCommand}" Height="45" Margin="5">Players</Button>
+            <Button Command="{Binding StadiumsCommand}" Height="45" Margin="5">Stadiums</Button>
+            <Button Command="{Binding GamesCommand}" Height="45" Margin="5">Games</Button>
+            <Button Command="{Binding TicketsCommand}" Height="45" Margin="5">Tickets</Button>
+        </StackPanel>
+
+        <ListBox Name="listbox"></ListBox>
     </DockPanel>
 </Window>

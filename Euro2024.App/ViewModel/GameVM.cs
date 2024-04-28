@@ -1,6 +1,9 @@
 ﻿using Euro2024.Data.Entities;
+using PropertyChanged;
 
 namespace Euro2024.App;
+
+[AddINotifyPropertyChangedInterface]
 public class GameVM
 {
     public int Id { get; set; }
