@@ -104,6 +104,7 @@ namespace Euro2024.Data.Migrations
                             Id = 5,
                             HighestStage = "Winner",
                             Name = "Czechia",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/800px-Flag_of_the_Czech_Republic.svg.png",
                             WinningsCount = 1
                         },
                         new
@@ -111,6 +112,7 @@ namespace Euro2024.Data.Migrations
                             Id = 6,
                             HighestStage = "Winner",
                             Name = "Denmark",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/512px-Flag_of_Denmark.svg.png",
                             WinningsCount = 1
                         },
                         new
@@ -118,6 +120,7 @@ namespace Euro2024.Data.Migrations
                             Id = 7,
                             HighestStage = "Final",
                             Name = "England",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/800px-Flag_of_England.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -125,6 +128,7 @@ namespace Euro2024.Data.Migrations
                             Id = 8,
                             HighestStage = "Winner",
                             Name = "France",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg/800px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg.png",
                             WinningsCount = 2
                         },
                         new
@@ -132,6 +136,7 @@ namespace Euro2024.Data.Migrations
                             Id = 9,
                             HighestStage = "None",
                             Name = "Georgia",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/800px-Flag_of_Georgia.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -147,6 +152,7 @@ namespace Euro2024.Data.Migrations
                             Id = 11,
                             HighestStage = "1/2",
                             Name = "Hungary",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/800px-Flag_of_Hungary.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -154,6 +160,7 @@ namespace Euro2024.Data.Migrations
                             Id = 12,
                             HighestStage = "Winner",
                             Name = "Italy",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/800px-Flag_of_Italy.svg.png",
                             WinningsCount = 2
                         },
                         new
@@ -161,6 +168,7 @@ namespace Euro2024.Data.Migrations
                             Id = 13,
                             HighestStage = "Winner",
                             Name = "Netherlands",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/800px-Flag_of_the_Netherlands.svg.png",
                             WinningsCount = 1
                         },
                         new
@@ -168,6 +176,7 @@ namespace Euro2024.Data.Migrations
                             Id = 14,
                             HighestStage = "1/4",
                             Name = "Poland",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/640px-Flag_of_Poland.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -175,6 +184,7 @@ namespace Euro2024.Data.Migrations
                             Id = 15,
                             HighestStage = "Winner",
                             Name = "Portugal",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/600px-Flag_of_Portugal.svg.png",
                             WinningsCount = 1
                         },
                         new
@@ -182,6 +192,7 @@ namespace Euro2024.Data.Migrations
                             Id = 16,
                             HighestStage = "1/4",
                             Name = "Romania",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/600px-Flag_of_Romania.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -189,6 +200,7 @@ namespace Euro2024.Data.Migrations
                             Id = 17,
                             HighestStage = "Group",
                             Name = "Scotland",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/800px-Flag_of_Scotland.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -196,6 +208,7 @@ namespace Euro2024.Data.Migrations
                             Id = 18,
                             HighestStage = "Final",
                             Name = "Serbia",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/800px-Flag_of_Serbia.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -203,6 +216,7 @@ namespace Euro2024.Data.Migrations
                             Id = 19,
                             HighestStage = "Winner",
                             Name = "Slovakia",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/800px-Flag_of_Slovakia.svg.png",
                             WinningsCount = 1
                         },
                         new
@@ -210,6 +224,7 @@ namespace Euro2024.Data.Migrations
                             Id = 20,
                             HighestStage = "Group",
                             Name = "Slovenia",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Flag_of_Slovenia.svg/800px-Flag_of_Slovenia.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -217,6 +232,7 @@ namespace Euro2024.Data.Migrations
                             Id = 21,
                             HighestStage = "Winner",
                             Name = "Spain",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/750px-Flag_of_Spain.svg.png",
                             WinningsCount = 3
                         },
                         new
@@ -224,6 +240,7 @@ namespace Euro2024.Data.Migrations
                             Id = 22,
                             HighestStage = "1/4",
                             Name = "Switzerland",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/512px-Flag_of_Switzerland.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -231,6 +248,7 @@ namespace Euro2024.Data.Migrations
                             Id = 23,
                             HighestStage = "1/2",
                             Name = "Türkiye",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/800px-Flag_of_Turkey.svg.png",
                             WinningsCount = 0
                         },
                         new
@@ -238,6 +256,7 @@ namespace Euro2024.Data.Migrations
                             Id = 24,
                             HighestStage = "1/4",
                             Name = "Ukraine",
+                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/800px-Flag_of_Ukraine.svg.png",
                             WinningsCount = 0
                         });
                 });
@@ -303,8 +322,8 @@ namespace Euro2024.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateOnly>("BirthDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
@@ -341,53 +360,57 @@ namespace Euro2024.Data.Migrations
                         new
                         {
                             Id = 1,
-                            BirthDate = new DateOnly(2000, 12, 10),
-                            CountryId = 24,
-                            FirstName = "Oleg",
-                            FootballClub = "Dynamo Kyiv",
-                            LastName = "Gusev",
-                            PhotoLink = "https://upload.wikimedia.org/wikipedia/commons/c/ca/Oleh_Husyev_20120611.jpg",
-                            TransferValue = 1000000
+                            BirthDate = new DateTime(1991, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 3,
+                            FirstName = "Kevin",
+                            FootballClub = "Manchester City",
+                            LastName = "De Bruyne",
+                            PhotoLink = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpl38EW-M7FK60xwdPYMZWs-wPMAZQJZRGPRPEXGBTmtah-Qx7ymuz0oPa7QM4s41zAkk&usqp=CAU",
+                            TransferValue = 90000000
                         },
                         new
                         {
                             Id = 2,
-                            BirthDate = new DateOnly(2001, 11, 10),
-                            CountryId = 1,
-                            FirstName = "Oleg",
+                            BirthDate = new DateTime(1989, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 24,
+                            FirstName = "Andriy",
                             FootballClub = "Dynamo Kyiv",
-                            LastName = "Busin",
-                            TransferValue = 1000000
+                            LastName = "Yarmolenko",
+                            PhotoLink = "https://novynarnia.com/wp-content/uploads/2022/03/andrij-yarmolenko.jpg",
+                            TransferValue = 8000000
                         },
                         new
                         {
                             Id = 3,
-                            BirthDate = new DateOnly(2002, 10, 10),
-                            CountryId = 1,
-                            FirstName = "Oleg",
-                            FootballClub = "Dynamo Kyiv",
-                            LastName = "Kusin",
-                            TransferValue = 1000000
+                            BirthDate = new DateTime(1994, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 15,
+                            FirstName = "Bernardo",
+                            FootballClub = "Manchester City",
+                            LastName = "Silva",
+                            PhotoLink = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwxwzQxiU46ENjJwyyScpnO1TYUCazI_TzIatbzb24mrFuR2DAOPXOZtIDUEFD1s-_JrQ&usqp=CAU",
+                            TransferValue = 120000000
                         },
                         new
                         {
                             Id = 4,
-                            BirthDate = new DateOnly(2003, 9, 10),
-                            CountryId = 1,
-                            FirstName = "Oleg",
-                            FootballClub = "Dynamo Kyiv",
-                            LastName = "Tusin",
-                            TransferValue = 1000000
+                            BirthDate = new DateTime(1988, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 14,
+                            FirstName = "Robert",
+                            FootballClub = "Barselona",
+                            LastName = "Lewandowski",
+                            PhotoLink = "https://img.championat.com/news/big/u/m/levandovski-futbolisty-sborn.jpg",
+                            TransferValue = 23000000
                         },
                         new
                         {
                             Id = 5,
-                            BirthDate = new DateOnly(2004, 1, 10),
-                            CountryId = 1,
-                            FirstName = "Oleg",
-                            FootballClub = "Dynamo Kyiv",
-                            LastName = "Musin",
-                            TransferValue = 1000000
+                            BirthDate = new DateTime(2003, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 7,
+                            FirstName = "Jude",
+                            FootballClub = "Real Madrid",
+                            LastName = "Bellingham",
+                            PhotoLink = "https://img.sportarena.com/2023/08/GettyImages-1610248343-1.jpg",
+                            TransferValue = 180000000
                         });
                 });
 
@@ -564,7 +587,7 @@ namespace Euro2024.Data.Migrations
                         new
                         {
                             Id = 2,
-                            GameId = 1,
+                            GameId = 2,
                             IsSold = false,
                             Place = "B25",
                             Price = 500m
@@ -572,7 +595,7 @@ namespace Euro2024.Data.Migrations
                         new
                         {
                             Id = 3,
-                            GameId = 1,
+                            GameId = 3,
                             IsSold = false,
                             Place = "C40",
                             Price = 450m
@@ -580,7 +603,7 @@ namespace Euro2024.Data.Migrations
                         new
                         {
                             Id = 4,
-                            GameId = 1,
+                            GameId = 4,
                             IsSold = false,
                             Place = "D50",
                             Price = 400m
@@ -588,7 +611,7 @@ namespace Euro2024.Data.Migrations
                         new
                         {
                             Id = 5,
-                            GameId = 1,
+                            GameId = 5,
                             IsSold = false,
                             Place = "D51",
                             Price = 400m

@@ -3,17 +3,11 @@ using Euro2024.Data;
 using Euro2024.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using PropertyChanged;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Euro2024.App;
 
@@ -42,6 +36,9 @@ public class Euro2024Manager
     private RelayCommand addCommand;
     private RelayCommand editCommand;
     private RelayCommand deleteCommand;
+    private RelayCommand topPlayersCommand;
+    private RelayCommand topCountriesCommand;
+    private RelayCommand topStadiumsCommand;
     public ICommand CountriesCommand => countriesCommand;
     public ICommand PlayersCommand => playersCommand;
     public ICommand StadiumsCommand => stadiumsCommand;
@@ -50,6 +47,10 @@ public class Euro2024Manager
     public ICommand AddCommand => addCommand;
     public ICommand EditCommand => editCommand;
     public ICommand DeleteCommand => deleteCommand;
+    public ICommand TopPlayersCommand => topPlayersCommand;
+    public ICommand TopCountriesCommand => topCountriesCommand;
+    public ICommand TopStadiumsCommand => topStadiumsCommand;
+
 
     private ListBox lb = new();
 
@@ -72,7 +73,11 @@ public class Euro2024Manager
         addCommand = new RelayCommand(o => Add(), o => CurrentType is nameof(Players) or nameof(Games) or nameof(Tickets));
         editCommand = new RelayCommand(o => Edit(), o => SelectedItem is PlayerVM or GameVM or TicketVM);
         deleteCommand = new RelayCommand(o => Delete(), o => SelectedItem is PlayerVM or GameVM or TicketVM);
-    }
+
+        topPlayersCommand = new RelayCommand(o => TopPlayers());
+        topCountriesCommand = new RelayCommand(o => TopCountries());
+        topStadiumsCommand = new RelayCommand(o => TopStadiums());
+    }    
 
     public void Search()
     {
@@ -163,6 +168,8 @@ public class Euro2024Manager
         if (result != true) return;
         try
         {
+            if (gameWindow.Team1Id == gameWindow.Team2Id)
+                throw new Exception("What are you doing?\nTeam can't play with itself!!");
             Game game = new Game
             {
                 StartTime = (DateTime)gameWindow.StartTime!,
@@ -198,6 +205,9 @@ public class Euro2024Manager
 
         try
         {
+            if (gameWindow.Team1Id == gameWindow.Team2Id)
+                throw new Exception("What are you doing?\nTeam can't play with itself!!");
+
             currentGame.StadiumId = gameWindow.StadiumId;
             currentGame.StartTime = (DateTime)gameWindow.StartTime!;
             currentGame.Countries.Clear();
@@ -317,7 +327,11 @@ public class Euro2024Manager
 
     private void LoadStadiums()
     {
-        stadiums = new(context.Stadiums.Include(x => x.Country).Select(x => new StadiumVM(x)));
+        stadiums = string.IsNullOrEmpty(SearchedText) ? 
+            new(context.Stadiums.Include(x => x.Country).Select(x => new StadiumVM(x))) :
+            new(context.Stadiums.Include(x => x.Country)
+                .Where(x => x.Name.Contains(SearchedText) || x.Settlement.Contains(SearchedText))
+                .Select(x => new StadiumVM(x)));
         CurrentType = nameof(Stadiums);
         lb.ItemsSource = Stadiums;
         lb.ItemsSource = null;
@@ -325,7 +339,12 @@ public class Euro2024Manager
 
     private void LoadPlayers()
     {
-        players = new(context.Players.Include(x => x.Country).Select(x => new PlayerVM(x)));
+        players = string.IsNullOrEmpty(SearchedText) ?
+            new(context.Players.Include(x => x.Country).Select(x => new PlayerVM(x))) :
+            new(context.Players.Include(x => x.Country)
+            .Where(x => x.FirstName.Contains(SearchedText) || x.LastName.Contains(SearchedText) ||
+                        x.FootballClub.Contains(SearchedText))
+            .Select(x => new PlayerVM(x)));
         CurrentType = nameof(Players);
         lb.ItemsSource = Players;
         lb.ItemsSource = null;
@@ -333,9 +352,50 @@ public class Euro2024Manager
 
     private void LoadTickets()
     {
-        tickets = new(context.Tickets.Include(x => x.Game).ThenInclude(x => x.Stadium).Include(x => x.Game).ThenInclude(x => x.Countries).Select(x => new TicketVM(x)));
+        tickets = string.IsNullOrEmpty(SearchedText) ?
+            new(context.Tickets.Include(x => x.Game).ThenInclude(x => x.Stadium).Include(x => x.Game).ThenInclude(x => x.Countries).Select(x => new TicketVM(x))) :
+            new(context.Tickets.Include(x => x.Game).ThenInclude(x => x.Stadium).Include(x => x.Game).ThenInclude(x => x.Countries)
+            .Where(x => x.Place.Contains(SearchedText))
+            .Select(x => new TicketVM(x)));
         CurrentType = nameof(Tickets);
         lb.ItemsSource = Tickets;
         lb.ItemsSource = null;
+    }
+
+    private void TopStadiums()
+    {
+        var stadiums = context.Stadiums.OrderByDescending(s => s.Capacity).Take(3).ToList();
+
+        StringBuilder sb = new();
+        for (int i = 0; i < stadiums.Count; i++)
+        {
+            sb.AppendLine($"{i + 1}. {stadiums[i]} : {stadiums[i].Capacity} places");
+        }
+        MessageBox.Show(sb.ToString(), "TOP 5 biggest stadiums");
+    }
+
+    private void TopCountries()
+    {
+        var countries = context.Countries.OrderByDescending(c => c.WinningsCount).Take(5).ToList();
+
+        StringBuilder sb = new();
+        for (int i = 0; i < countries.Count; i++)
+        {
+            sb.AppendLine($"{i + 1}. {countries[i]} - {countries[i].WinningsCount} Winnings");
+        }
+        MessageBox.Show(sb.ToString(), "TOP 5 most successful countries");
+    }
+
+    private void TopPlayers()
+    {
+        var players = context.Players.Include(x => x.Country)
+            .OrderByDescending(p => p.TransferValue).Take(5).ToList();
+
+        StringBuilder sb = new();
+        for (int i = 0; i < players.Count; i++)
+        {
+            sb.AppendLine($"{i + 1}. {players[i]} - {players[i].TransferValue} EUR");
+        }
+        MessageBox.Show(sb.ToString(), "TOP 5 most expensive players");
     }
 }

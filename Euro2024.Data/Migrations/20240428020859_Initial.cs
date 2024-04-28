@@ -37,7 +37,7 @@ namespace Euro2024.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    BirthDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FootballClub = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     TransferValue = table.Column<int>(type: "int", nullable: true, defaultValue: 0),
                     CountryId = table.Column<int>(type: "int", nullable: false),
@@ -159,24 +159,24 @@ namespace Euro2024.Data.Migrations
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
                 values: new object[,]
                 {
-                    { 5, "Winner", "Czechia", null, 1 },
-                    { 6, "Winner", "Denmark", null, 1 }
+                    { 5, "Winner", "Czechia", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/800px-Flag_of_the_Czech_Republic.svg.png", 1 },
+                    { 6, "Winner", "Denmark", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/512px-Flag_of_Denmark.svg.png", 1 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
-                values: new object[] { 7, "Final", "England", null });
+                values: new object[] { 7, "Final", "England", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/800px-Flag_of_England.svg.png" });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
-                values: new object[] { 8, "Winner", "France", null, 2 });
+                values: new object[] { 8, "Winner", "France", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg/800px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg.png", 2 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
-                values: new object[] { 9, "None", "Georgia", null });
+                values: new object[] { 9, "None", "Georgia", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/800px-Flag_of_Georgia.svg.png" });
 
             migrationBuilder.InsertData(
                 table: "Countries",
@@ -186,60 +186,60 @@ namespace Euro2024.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
-                values: new object[] { 11, "1/2", "Hungary", null });
+                values: new object[] { 11, "1/2", "Hungary", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/800px-Flag_of_Hungary.svg.png" });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
                 values: new object[,]
                 {
-                    { 12, "Winner", "Italy", null, 2 },
-                    { 13, "Winner", "Netherlands", null, 1 }
+                    { 12, "Winner", "Italy", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/800px-Flag_of_Italy.svg.png", 2 },
+                    { 13, "Winner", "Netherlands", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/800px-Flag_of_the_Netherlands.svg.png", 1 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
-                values: new object[] { 14, "1/4", "Poland", null });
+                values: new object[] { 14, "1/4", "Poland", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/640px-Flag_of_Poland.svg.png" });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
-                values: new object[] { 15, "Winner", "Portugal", null, 1 });
+                values: new object[] { 15, "Winner", "Portugal", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/600px-Flag_of_Portugal.svg.png", 1 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
                 values: new object[,]
                 {
-                    { 16, "1/4", "Romania", null },
-                    { 17, "Group", "Scotland", null },
-                    { 18, "Final", "Serbia", null }
+                    { 16, "1/4", "Romania", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/600px-Flag_of_Romania.svg.png" },
+                    { 17, "Group", "Scotland", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/800px-Flag_of_Scotland.svg.png" },
+                    { 18, "Final", "Serbia", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/800px-Flag_of_Serbia.svg.png" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
-                values: new object[] { 19, "Winner", "Slovakia", null, 1 });
+                values: new object[] { 19, "Winner", "Slovakia", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/800px-Flag_of_Slovakia.svg.png", 1 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
-                values: new object[] { 20, "Group", "Slovenia", null });
+                values: new object[] { 20, "Group", "Slovenia", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Flag_of_Slovenia.svg/800px-Flag_of_Slovenia.svg.png" });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink", "WinningsCount" },
-                values: new object[] { 21, "Winner", "Spain", null, 3 });
+                values: new object[] { 21, "Winner", "Spain", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/750px-Flag_of_Spain.svg.png", 3 });
 
             migrationBuilder.InsertData(
                 table: "Countries",
                 columns: new[] { "Id", "HighestStage", "Name", "PhotoLink" },
                 values: new object[,]
                 {
-                    { 22, "1/4", "Switzerland", null },
-                    { 23, "1/2", "Türkiye", null },
-                    { 24, "1/4", "Ukraine", null }
+                    { 22, "1/4", "Switzerland", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/512px-Flag_of_Switzerland.svg.png" },
+                    { 23, "1/2", "Türkiye", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/800px-Flag_of_Turkey.svg.png" },
+                    { 24, "1/4", "Ukraine", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/800px-Flag_of_Ukraine.svg.png" }
                 });
 
             migrationBuilder.InsertData(
@@ -247,11 +247,11 @@ namespace Euro2024.Data.Migrations
                 columns: new[] { "Id", "BirthDate", "CountryId", "FirstName", "FootballClub", "LastName", "PhotoLink", "TransferValue" },
                 values: new object[,]
                 {
-                    { 1, new DateOnly(2000, 12, 10), 24, "Oleg", "Dynamo Kyiv", "Gusev", "https://upload.wikimedia.org/wikipedia/commons/c/ca/Oleh_Husyev_20120611.jpg", 1000000 },
-                    { 2, new DateOnly(2001, 11, 10), 1, "Oleg", "Dynamo Kyiv", "Busin", null, 1000000 },
-                    { 3, new DateOnly(2002, 10, 10), 1, "Oleg", "Dynamo Kyiv", "Kusin", null, 1000000 },
-                    { 4, new DateOnly(2003, 9, 10), 1, "Oleg", "Dynamo Kyiv", "Tusin", null, 1000000 },
-                    { 5, new DateOnly(2004, 1, 10), 1, "Oleg", "Dynamo Kyiv", "Musin", null, 1000000 }
+                    { 1, new DateTime(1991, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "Kevin", "Manchester City", "De Bruyne", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpl38EW-M7FK60xwdPYMZWs-wPMAZQJZRGPRPEXGBTmtah-Qx7ymuz0oPa7QM4s41zAkk&usqp=CAU", 90000000 },
+                    { 2, new DateTime(1989, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 24, "Andriy", "Dynamo Kyiv", "Yarmolenko", "https://novynarnia.com/wp-content/uploads/2022/03/andrij-yarmolenko.jpg", 8000000 },
+                    { 3, new DateTime(1994, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 15, "Bernardo", "Manchester City", "Silva", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwxwzQxiU46ENjJwyyScpnO1TYUCazI_TzIatbzb24mrFuR2DAOPXOZtIDUEFD1s-_JrQ&usqp=CAU", 120000000 },
+                    { 4, new DateTime(1988, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), 14, "Robert", "Barselona", "Lewandowski", "https://img.championat.com/news/big/u/m/levandovski-futbolisty-sborn.jpg", 23000000 },
+                    { 5, new DateTime(2003, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), 7, "Jude", "Real Madrid", "Bellingham", "https://img.sportarena.com/2023/08/GettyImages-1610248343-1.jpg", 180000000 }
                 });
 
             migrationBuilder.InsertData(
@@ -289,10 +289,10 @@ namespace Euro2024.Data.Migrations
                 values: new object[,]
                 {
                     { 1, 1, "A25", 600m },
-                    { 2, 1, "B25", 500m },
-                    { 3, 1, "C40", 450m },
-                    { 4, 1, "D50", 400m },
-                    { 5, 1, "D51", 400m }
+                    { 2, 2, "B25", 500m },
+                    { 3, 3, "C40", 450m },
+                    { 4, 4, "D50", 400m },
+                    { 5, 5, "D51", 400m }
                 });
 
             migrationBuilder.CreateIndex(

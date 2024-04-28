@@ -1,17 +1,5 @@
 ﻿using Euro2024.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Euro2024.App.Forms;
 
@@ -39,6 +27,15 @@ public partial class GameWindow : Window
 
     private void SaveButton_Click(object sender, RoutedEventArgs e)
     {
+        if (cbxTeam1.SelectedIndex == -1 ||
+            cbxTeam2.SelectedIndex == -1 ||
+            cbxStadium.SelectedIndex == -1 ||
+            calendarchik.SelectedDate == null)
+        {
+            MessageBox.Show("Fill all required fields!!");
+            return;
+        }
+
         StartTime = calendarchik.SelectedDate;
 
         Stadium stadium = (Stadium)cbxStadium.SelectedItem;

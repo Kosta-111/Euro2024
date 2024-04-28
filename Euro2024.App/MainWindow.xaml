@@ -46,7 +46,7 @@
                                         <TextBlock Text="{Binding BirthDate}" FontWeight="DemiBold" Padding="5 0"></TextBlock>
                                     </UniformGrid>
                                     <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="26" Padding="25 0" HorizontalAlignment="Center"></TextBlock>
-                                    <Image Source="{Binding PhotoLink}" DockPanel.Dock="Right" Margin="5" Height="40" MaxWidth="60"></Image>
+                                    <Image Source="{Binding PhotoLink}" DockPanel.Dock="Right" Margin="2" Height="50"></Image>
                                     <TextBlock Text="{Binding FootballClub}" FontWeight="DemiBold" Padding="5 0" FontSize="20" DockPanel.Dock="Top" HorizontalAlignment="Right"></TextBlock>
                                     <TextBlock Text="{Binding CountryName}" FontWeight="DemiBold" Padding="5 0" DockPanel.Dock="Bottom" HorizontalAlignment="Right"></TextBlock>
                                 </DockPanel>
@@ -133,6 +133,13 @@
             <Button Command="{Binding DeleteCommand}">Delete</Button>
             <Label>Search:</Label>
             <TextBox TextChanged="TextBox_TextChanged" Text="{Binding SearchedText, UpdateSourceTrigger=PropertyChanged}" Width="200" Background="LightGray"></TextBox>
+            <Menu>
+                <MenuItem Header="Statistic">
+                    <MenuItem Command="{Binding TopPlayersCommand}" Header="TOP 5 most expensive players"></MenuItem>
+                    <MenuItem Command="{Binding TopCountriesCommand}" Header="TOP 5 most successful countries"></MenuItem>
+                    <MenuItem Command="{Binding TopStadiumsCommand}" Header="TOP 3 biggest stadiums"></MenuItem>
+                </MenuItem>
+            </Menu>
         </ToolBar>
 
         <StackPanel DockPanel.Dock ="Left">
